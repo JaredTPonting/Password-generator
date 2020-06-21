@@ -2,22 +2,15 @@ import random
 from random import randint
 import tkinter as tk
 
-def shuffle(string):
-	templist = list(string)
-	random.shuffle(templist)
-	return ''.join(templist)
-
-
-
-
+#returns a random upper case letter
 def uppercase():
 	upper = chr(random.randint(65,90))
 	return upper
-
+#returns a random lower case letter
 def lowercase():
 	lower = chr(random.randint(97,122))
 	return lower
-
+#returns a random number
 def number():
 	num = chr(random.randint(48,57))
 	return num
@@ -26,14 +19,16 @@ def number():
 #lowercase()
 #uppercase()
 
-funcCall = ["number()", "uppercase()", "lowercase()"]
-
-funcCall[randint(0,2)]
 
 def generatePass():
+	#deletes whatever was in the entry, maybe something the user typed or an unwanted password
 	entry.delete(0,tk.END)
+
+	#"randomly" decides on the length of password 
 	length = randint(7,15)
+
 	password = ""
+	#generates the password
 	for i in range(length):
 		dec = randint(0,2)
 		if dec == 0:
@@ -42,6 +37,7 @@ def generatePass():
 			password = password + str(uppercase())
 		else:
 			password = password + str(lowercase())
+	#displays password in the entry
 	entry.insert(0,password)
 
 
