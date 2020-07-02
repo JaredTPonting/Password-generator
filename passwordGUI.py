@@ -24,7 +24,7 @@ def generatePass():
 	#deletes whatever was in the entry, maybe something the user typed or an unwanted password
 	entry.delete(0,tk.END)
 
-	#"randomly" decides on the length of password 
+	#  "randomly"   decides on the length of password 
 	length = randint(7,15)
 
 	password = ""
